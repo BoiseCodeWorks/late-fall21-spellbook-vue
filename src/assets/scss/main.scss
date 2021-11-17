@@ -1,0 +1,63 @@
+@import "./_variables.scss";
+@import "bootstrap";
+@import "./_overrides.scss";
+@import "./utilities.scss";
+@import "./loaders.scss";
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $body-bg;
+}
+
+main {
+  flex-grow: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea,
+select {
+  &:not(:placeholder-shown) {
+    &:valid {
+      border: 1px solid $success;
+    }
+    &:invalid {
+      border: 1px solid $danger;
+    }
+  }
+}
+
+form:invalid button[type="submit"] {
+  filter: grayscale(1);
+  pointer-events: none;
+}
+
+.text-theme {
+  font-family: 'Henny Penny', cursive;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
